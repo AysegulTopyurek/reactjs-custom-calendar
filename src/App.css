@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-image: linear-gradient(65deg, skyblue, #f4f4f4, pink);
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5em;
+  max-width: 50em;
+}
+
+/*CALENDAR*/
+
+.calendar button {
+  border: none;
+  padding: 1em;
+  border-radius: 1em;
+}
+.btn-arrow {
+  background-color: transparent;
+}
+
+.calendar button:active {
+  background-color: skyblue;
+}
+
+.calendar button:hover {
+  background-color: lightgray;
+}
+
+.calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.1em;
+  border: none;
+}
+.calendar .selected {
+  background-color: #1a8fff78;
+}
+
+.this-month {
+  font-weight: 900;
+}
+.container {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.container .btn-date {
+  padding: 0.5em 1em;
+  border: none;
+  font-size: 2em;
+  background-color: skyblue;
+  border-radius: 0.5em;
+  box-shadow: 0 0 3px lightgray;
+  transition: all 0.3s;
+}
+.container .btn-date:hover {
+  background-color: #f2f2f2;
+  transition: all 0.3s;
+}
+.date-picker {
+  position: relative;
+}
+.date-picker .calendar {
+  position: absolute;
+  top: 100%;
+  width: 400px;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0 0 5px lightgray;
+}
+.date-picker .checked-date {
+  text-align: center;
+}
+
+.btn-close {
+  position: absolute;
+  top: 110%;
+  left: 1em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+.app-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer {
+  text-align: center;
+  padding: 2em;
+}
+.btn-set {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+@media (max-width: 400px) {
+  .container .btn-date {
+    font-size: 1em;
+  }
+  .date-picker .wrapper {
+    display: flex;
+  }
+
+  .date-picker .calendar {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    margin: auto;
+    width: 300px;
+  }
+  .calendar .days {
+    width: 300px;
+  }
+  .btn-close {
+    display: none;
+  }
+}
